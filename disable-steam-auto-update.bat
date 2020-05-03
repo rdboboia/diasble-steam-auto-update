@@ -1,6 +1,8 @@
 @echo off
 SETLOCAL=ENABLEDELAYEDEXPANSION
 
+:: This script disables Steam's auto game update behavior. It changes it so that the games are only updated on launch.
+
 :workspace
 	set temporalFilesPath="%temp%\disable-steam-auto-update-script"
 	set steamappsAbsolutePath="D:\SteamLibrary\steamapps"
