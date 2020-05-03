@@ -8,3 +8,6 @@ The second variable sets the Steam's steamapps folder which is where the require
 
 ## What this script does
 There are comments inside the script that I think are enough to understand how the script works. However, if you want a brief explanation: the script reads all .acf Steam files that are inside the steamapps folder, checks if they have the expected configuration for the "Update only at launch" behavior and asks the user for confimation if changes are needed, changing Steam's files.
+
+## Caviats
+This script only modifies games that are currently installed in the specified directory. New game installs are not affected, so the script should be executed again. Possible fix: since the script is lightweight it can be set to be executed when the system starts, so new games can be configured at startup.
