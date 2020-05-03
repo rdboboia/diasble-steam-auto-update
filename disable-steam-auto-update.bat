@@ -58,7 +58,8 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 				set line15=!customLine15!
 				
 				:: Write the original file with the modified line into a temporal file
-				for /L %%i in (1, 1, !count!) do (
+				echo !line1!> %temporalFilesPath%\%%~nxf
+				for /L %%i in (2, 1, !count!) do (
 					echo !line%%i!>> %temporalFilesPath%\%%~nxf
 				)
 				
