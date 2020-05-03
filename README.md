@@ -1,4 +1,4 @@
-# diasble-steam-auto-update
+# disable-steam-auto-update
 A script that disables Steam's auto update for each installed game.
 
 ## How to use it
