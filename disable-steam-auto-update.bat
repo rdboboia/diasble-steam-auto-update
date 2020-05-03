@@ -2,8 +2,8 @@
 SETLOCAL=ENABLEDELAYEDEXPANSION
 
 :workspace
-	set temporalFilesPath=%temp%\disable-steam-auto-update-script
-	set steamappsAbsolutePath=D:\SteamLibrary\steamapps
+	set temporalFilesPath="%temp%\disable-steam-auto-update-script"
+	set steamappsAbsolutePath="D:\SteamLibrary\steamapps"
 
 :customLineVariables
 	set customLine15=	"AutoUpdateBehavior"		"1"
@@ -30,7 +30,7 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 		
 		:: Counting number of lines and storing them into memory
 		set count=0
-		for /f "delims=" %%a in (%steamappsAbsolutePath%\%%~nf.acf) do (
+		for /f "delims=" %%a in (%%f) do (
 			set /a count=!count! + 1
 			set line!count!=%%a
 		)
