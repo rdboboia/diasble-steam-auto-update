@@ -8,7 +8,7 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 	set steamappsAbsolutePath="D:\SteamLibrary\steamapps"
 
 :customLineVariables
-	set customLine15=	"AutoUpdateBehavior"		"1"
+	set customAutoUpdateLine=	"AutoUpdateBehavior"		"1"
 
 :steamWarning
 	echo It is recommended to close Steam for the changes to be properly saved.
@@ -38,10 +38,10 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 		)
 
 		:: Checking if the autoupdate is already disabled
-		if not !line15!==!customLine15! (
+		if not !line18!==!customAutoUpdateLine! (
 			
 			:: Get the game name
-			for /f "tokens=1,2 delims=	" %%i in ("!line5!") do (
+			for /f "tokens=1,2 delims=	" %%i in ("!line6!") do (
 				set gameName=%%j
 			)
 			
@@ -57,7 +57,7 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 			if !errorlevel!==1 (
 				
 				:: Change the auto update
-				set line15=!customLine15!
+				set line18=!customAutoUpdateLine!
 				
 				:: Write the original file with the modified line into a temporal file
 				echo !line1!> %temporalFilesPath%\%%~nxf
