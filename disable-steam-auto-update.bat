@@ -5,7 +5,7 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 
 :workspace
 	set temporalFilesPath="%temp%\disable-steam-auto-update-script"
-	set steamappsAbsolutePath="D:\SteamLibrary\steamapps"
+	set steamappsAbsolutePath="Z:\Prueba 2"
 
 :customLineVariables
 	set customAutoUpdateLine=	"AutoUpdateBehavior"		"1"
@@ -32,11 +32,11 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 		
 		:: Counting number of lines and storing them into memory
 		set count=0
-		for /f "delims=" %%a in (%%f) do (
+		for /f "delims=" %%a in ('type "%%f"') do (
 			set /a count=!count! + 1
 			set line!count!=%%a
 		)
-
+		
 		:: Checking if the autoupdate is already disabled
 		if not !line18!==!customAutoUpdateLine! (
 			
@@ -66,7 +66,7 @@ SETLOCAL=ENABLEDELAYEDEXPANSION
 				)
 				
 				:: Replace the original file with the modified file
-				copy "%temporalFilesPath%\%%~nxf" "%steamappsAbsolutePath%\%%~nxf"
+				copy "%temporalFilesPath%\%%~nxf" %steamappsAbsolutePath%\%%~nxf
 			)
 		)
 	)
